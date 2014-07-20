@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.1" xmlns="http://pear.php.net/dtd/package-2.1" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.1     http://pear.php.net/dtd/package-2.1.xsd">
+ <name>PEAR2_DevUtils</name>
+ <channel>pear2.php.net</channel>
+ <summary>Pyrus developer utilities
+</summary>
+ <description>Utilities for common tasks during development of a PEAR package. Intended to complement Pyrus_Developer, which is more generic in its nature than the specialized features provided here.</description>
+ <lead>
+  <name>Vasil Rangelov</name>
+  <user>boen_robot</user>
+  <email>boen.robot@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2014-07-21</date>
+ <time>01:47:46</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL License 2.1</license>
+ <notes>First release</notes>
+ <contents>
+  <dir name="/">
+   <dir name="src" baseinstalldir="/">
+    <dir name="PEAR2">
+     <dir name="DevUtils">
+      <file role="php" name="Bundler.php">
+       <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+       <tasks:replace to="summary" type="package-info" from="~~summary~~"/>
+       <tasks:replace to="description" type="package-info" from="~~description~~"/>
+      </file>
+      <file role="php" name="FileBuilder.php">
+       <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+       <tasks:replace to="summary" type="package-info" from="~~summary~~"/>
+       <tasks:replace to="description" type="package-info" from="~~description~~"/>
+      </file>
+      <file role="php" name="StubGenerator.php">
+       <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+       <tasks:replace to="summary" type="package-info" from="~~summary~~"/>
+       <tasks:replace to="description" type="package-info" from="~~description~~"/>
+      </file>
+     </dir>
+    </dir>
+   </dir>
+   <dir name="tests" baseinstalldir="/">
+    <dir name="expected">
+     <file role="test" name="PEAR2_Cache_SHM.xml.php">
+      <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+     </file>
+     <file role="test" name="PEAR2_Net_RouterOS.xml.php">
+      <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+     </file>
+    </dir>
+    <dir name="input">
+     <file role="test" name="PEAR2_Cache_SHM.xml"/>
+     <file role="test" name="PEAR2_Net_RouterOS.xml"/>
+    </dir>
+    <file role="test" name="bootstrap.php">
+     <tasks:replace to="php_dir" type="pear-config" from="../src"/>
+     <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+    </file>
+    <file role="test" name="phpunit.xml">
+     <tasks:replace to="php_dir" type="pear-config" from="../src"/>
+    </file>
+    <file role="test" name="stubGeneratorTest.php">
+     <tasks:replace to="version" type="package-info" from="GIT: $Id$"/>
+     <tasks:replace to="summary" type="package-info" from="~~summary~~"/>
+     <tasks:replace to="description" type="package-info" from="~~description~~"/>
+    </file>
+   </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+  </required>
+  <optional>
+   <package>
+    <name>PEAR2_Autoload</name>
+    <channel>pear2.php.net</channel>
+    <min>0.2.4</min>
+   </package>
+  </optional>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install name="src/PEAR2/DevUtils/Bundler.php" as="PEAR2/DevUtils/Bundler.php"/>
+   <install name="src/PEAR2/DevUtils/FileBuilder.php" as="PEAR2/DevUtils/FileBuilder.php"/>
+   <install name="src/PEAR2/DevUtils/StubGenerator.php" as="PEAR2/DevUtils/StubGenerator.php"/>
+   <install name="tests/bootstrap.php" as="bootstrap.php"/>
+   <install name="tests/expected/PEAR2_Cache_SHM.xml.php" as="expected/PEAR2_Cache_SHM.xml.php"/>
+   <install name="tests/expected/PEAR2_Net_RouterOS.xml.php" as="expected/PEAR2_Net_RouterOS.xml.php"/>
+   <install name="tests/input/PEAR2_Cache_SHM.xml" as="input/PEAR2_Cache_SHM.xml"/>
+   <install name="tests/input/PEAR2_Net_RouterOS.xml" as="input/PEAR2_Net_RouterOS.xml"/>
+   <install name="tests/phpunit.xml" as="phpunit.xml"/>
+   <install name="tests/stubGeneratorTest.php" as="stubGeneratorTest.php"/>
+  </filelist>
+ </phprelease>
+</package>

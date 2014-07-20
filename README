@@ -1,0 +1,2 @@
+Pyrus developer utilities
+Utilities for common tasks during development of a PEAR package. Intended to complement Pyrus_Developer, which is more generic in its nature than the specialized features provided here.
